@@ -64,6 +64,6 @@ public class CustomerController {
             System.out.println("gay e" + e);
             return "redirect:/index";
         }
-        return "redirect:/customerRegister";
+        return "redirect:/index2";
     }
 }
