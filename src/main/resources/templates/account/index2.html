@@ -20,7 +20,7 @@
     </header>
 <div class="form-box register">
             <h2>Registration</h2>
-            <form th:action="@{/customerRegister}" modelAttribute="customerRegister" method ="post" th:object="${customerRegister}">
+            <form th:action="/customerRegister" modelAttribute="customerRegister" method ="post" th:object="${customerRegister}">
                 <div class="input-box">
                     <span class="icon"></span>
                     <input type="text" name="custname" id="custname" required>
