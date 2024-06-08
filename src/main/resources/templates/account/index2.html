@@ -20,18 +20,18 @@
     </header>
 <div class="form-box register">
             <h2>Registration</h2>
-            <form action="@{/customerRegister}" modelAttribute="customerRegister" method ="post" th:object="${customerRegister}">
+            <form th:action="@{/customerRegister}" modelAttribute="customerRegister" method ="post" th:object="${customerRegister}">
                 <div class="input-box">
                     <span class="icon"></span>
                     
                     <label>Name</label>
                 </div>
-                <div><input type="text" name="custname" id="custname" required>
+                <div><input type="text" name= "custname" required>
                 </div>
                 
                 <div class="input-box">
                     <span class="icon"></span>
-                    <input type="email" name="custemail" required>
+                    <input type="email" name = "custemail" required>
                     <label>Email</label>
                 </div>
                 <div class="input-box">
