@@ -23,9 +23,9 @@ public class CustomerController {
         this.dataSource = dataSource;
     }
     
-    @GetMapping("/customerRegister")
+    @GetMapping("/index")
     public String customerRegister() {
-        return "account/index2";
+        return "account/customerRegister";
     }
 
     @PostMapping("/customerRegister")
@@ -45,11 +45,11 @@ public class CustomerController {
                 
                 
                 
-                statement.setString(2, custname);
-                statement.setString(3, custemail);
-                statement.setString(4, custpassword);
-                statement.setString(5, custphonenum);
-                statement.setString(6, custaddress);
+                statement.setString(1, custname);
+                statement.setString(2, custemail);
+                statement.setString(3, custpassword);
+                statement.setString(4, custphonenum);
+                statement.setString(5, custaddress);
                 statement.executeUpdate();
                 
                 System.out.println("guest  name : " + custname);
@@ -64,6 +64,6 @@ public class CustomerController {
             System.out.println("gay e" + e);
             return "redirect:/index";
         }
-        return "redirect:/index2";
+        return "redirect:/customerRegister";
     }
 }
