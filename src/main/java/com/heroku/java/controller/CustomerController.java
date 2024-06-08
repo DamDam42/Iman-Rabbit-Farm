@@ -33,23 +33,22 @@ public class CustomerController {
 
         try{
             try (Connection connection = dataSource.getConnection()) {
-                String sql = "INSERT INTO public.customer(custname,custemail,custpassword,custphonenum,custaddress) VALUES (?,?,?,?,?);";
+                String sql = "INSERT INTO public.customer(custname,custpassword,custphonenum,custadress,custemail) VALUES (?,?,?,?,?);";
                 final var statement = connection.prepareStatement(sql);
                 
                 String custname = customer.getCustName();
-                String custemail = customer.getCustEmail();
                 String custpassword = customer.getCustPassword();
                 String custphonenum = customer.getCustPhoneNum();
                 String custaddress = customer.getCustAddress();
-                
+                String custemail = customer.getCustEmail();
                 
                 
                 
                 statement.setString(1, custname);
-                statement.setString(2, custemail);
-                statement.setString(3, custpassword);
-                statement.setString(4, custphonenum);
-                statement.setString(5, custaddress);
+                statement.setString(5, custemail);
+                statement.setString(2, custpassword);
+                statement.setString(3, custphonenum);
+                statement.setString(4, custaddress);
                 statement.executeUpdate();
                 
                 System.out.println("guest  name : " + custname);
