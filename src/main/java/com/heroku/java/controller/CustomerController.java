@@ -1,6 +1,7 @@
 package com.heroku.java.controller;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
@@ -45,7 +46,6 @@ public class CustomerController {
                 statement.setString(1, custname);
                 statement.setString(2, custemail);
                 statement.setString(3, custpassword);
-                
                 statement.setString(4, custphonenum);
                 
                 
@@ -55,8 +55,8 @@ public class CustomerController {
                 // System.out.println("proimg: "+proimgs.getBytes());
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("gay e" + e);
             return "redirect:/index";
         }
         return "redirect:/index";
