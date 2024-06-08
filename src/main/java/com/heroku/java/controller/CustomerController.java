@@ -36,25 +36,25 @@ public class CustomerController {
                 String sql = "INSERT INTO public.customer(custname,custpassword,custphonenum,custaddress,custemail) VALUES (?,?,?,?,?);";
                 final var statement = connection.prepareStatement(sql);
                 
-                String custname = customer.getCustName();
-                String custpassword = customer.getCustPassword();
-                String custphonenum = customer.getCustPhoneNum();
-                String custaddress = customer.getCustAddress();
-                String custemail = customer.getCustEmail();
+                String custName = customer.getCustName();
+                String custPassword = customer.getCustPassword();
+                String custPhonenum = customer.getCustPhoneNum();
+                String custAddress = customer.getCustAddress();
+                String custEmail = customer.getCustEmail();
                 
                 
                 
-                statement.setString(1, custname);
-                statement.setString(2, custpassword);
-                statement.setString(3, custphonenum); 
-                statement.setString(4, custaddress);
-                statement.setString(5, custemail);
+                statement.setString(1, custName);
+                statement.setString(2, custPassword);
+                statement.setString(3, custPhonenum); 
+                statement.setString(4, custAddress);
+                statement.setString(5, custEmail);
                 
                 
                
                 statement.executeUpdate();
                 
-                System.out.println("guest  name : " + custname);
+                System.out.println("guest  name : " + custName);
                 // System.out.println("type : "+protype);
                 // System.out.println("product price : RM"+proprice);
                 // System.out.println("proimg: "+proimgs.getBytes());
