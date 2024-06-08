@@ -23,9 +23,12 @@
             <form th:action="@{/customerRegister}" modelAttribute="customerRegister" method ="post" th:object="${customerRegister}">
                 <div class="input-box">
                     <span class="icon"></span>
-                    <input type="text" name="custname" id="custname" required>
+                    
                     <label>Name</label>
                 </div>
+                <div><input type="text" name="custname" id="custname" required>
+                </div>
+                
                 <div class="input-box">
                     <span class="icon"></span>
                     <input type="email" name="custemail" required>
