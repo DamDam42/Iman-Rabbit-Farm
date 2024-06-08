@@ -23,7 +23,7 @@ public class CustomerController {
     
     @GetMapping("/customerRegister")
     public String customerRegister() {
-        return "account/index";
+        return "account/index2";
     }
 
     @PostMapping("/customerRegister")
@@ -34,22 +34,22 @@ public class CustomerController {
             String sql = "INSERT INTO public.customer(custname,custemail,custpassword,custphonenum) VALUES (?, ?, ?, ?);";
             final var statement = connection.prepareStatement(sql);
 
-            String name = customer.getCustName();
-            String email = customer.getCustEmail();
-             String password = customer.getCustPassword();
-            String phonenum = customer.getCustPhoneNum();
+            String custname = customer.getCustName();
+            String custemail = customer.getCustEmail();
+            String custpassword = customer.getCustPassword();
+            String custphonenum = customer.getCustPhoneNum();
            
             
 
 
-            statement.setString(1, name);
-            statement.setString(2, email);
-            statement.setString(3, password);
+            statement.setString(1, custname);
+            statement.setString(2, custemail);
+            statement.setString(3, custpassword);
             
-            statement.setString(4, phonenum);
+            statement.setString(4, custphonenum);
            
 
-            System.out.println("guest  name : " + name);
+            System.out.println("guest  name : " + custname);
             // System.out.println("type : "+protype);
             // System.out.println("product price : RM"+proprice);
             // System.out.println("proimg: "+proimgs.getBytes());
