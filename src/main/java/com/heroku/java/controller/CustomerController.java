@@ -45,10 +45,13 @@ public class CustomerController {
                 
                 
                 statement.setString(1, custname);
-                statement.setString(5, custemail);
                 statement.setString(2, custpassword);
-                statement.setString(3, custphonenum);
+                statement.setString(3, custphonenum); 
                 statement.setString(4, custaddress);
+                statement.setString(5, custemail);
+                
+                
+               
                 statement.executeUpdate();
                 
                 System.out.println("guest  name : " + custname);
