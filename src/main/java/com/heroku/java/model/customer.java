@@ -9,7 +9,10 @@ public class customer{
     private String custaddress;
     private String custpassword;
 
-    
+    public customer(){
+
+        
+    }
 
     public String getCustName(){
         return this.custname;
