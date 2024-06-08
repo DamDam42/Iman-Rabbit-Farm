@@ -30,31 +30,30 @@ public class CustomerController {
     public String customerRegister(@ModelAttribute("customerRegister") customer customer) {
 
         try {
-            Connection connection = dataSource.getConnection();
-            String sql = "INSERT INTO public.customer(custname,custemail,custpassword,custphonenum) VALUES (?, ?, ?, ?);";
-            final var statement = connection.prepareStatement(sql);
-
-            String custname = customer.getCustName();
-            String custemail = customer.getCustEmail();
-            String custpassword = customer.getCustPassword();
-            String custphonenum = customer.getCustPhoneNum();
-           
-            
-
-
-            statement.setString(1, custname);
-            statement.setString(2, custemail);
-            statement.setString(3, custpassword);
-            
-            statement.setString(4, custphonenum);
-           
-
-            System.out.println("guest  name : " + custname);
-            // System.out.println("type : "+protype);
-            // System.out.println("product price : RM"+proprice);
-            // System.out.println("proimg: "+proimgs.getBytes());
-
-            connection.close();
+            try (Connection connection = dataSource.getConnection()) {
+                String sql = "INSERT INTO public.customer(custname,custemail,custpassword,custphonenum) VALUES (?, ?, ?, ?);";
+                final var statement = connection.prepareStatement(sql);
+                
+                String custname = customer.getCustName();
+                String custemail = customer.getCustEmail();
+                String custpassword = customer.getCustPassword();
+                String custphonenum = customer.getCustPhoneNum();
+                
+                
+                
+                
+                statement.setString(1, custname);
+                statement.setString(2, custemail);
+                statement.setString(3, custpassword);
+                
+                statement.setString(4, custphonenum);
+                
+                
+                System.out.println("guest  name : " + custname);
+                // System.out.println("type : "+protype);
+                // System.out.println("product price : RM"+proprice);
+                // System.out.println("proimg: "+proimgs.getBytes());
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
