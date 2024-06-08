@@ -31,22 +31,22 @@ public class CustomerController {
 
         try {
             Connection connection = dataSource.getConnection();
-            String sql = "INSERT INTO public.customer(custname,custemail,custphonenum,custaddress,custpassword) VALUES (?, ?, ?, ?, ?);";
+            String sql = "INSERT INTO public.customer(custname,custemail,custpassword,custphonenum) VALUES (?, ?, ?, ?);";
             final var statement = connection.prepareStatement(sql);
 
             String name = customer.getCustName();
             String email = customer.getCustEmail();
+             String password = customer.getCustPassword();
             String phonenum = customer.getCustPhoneNum();
-            String address = customer.getCustAddress();
-            String password = customer.getCustPassword();
+           
             
 
 
             statement.setString(1, name);
             statement.setString(2, email);
-            statement.setString(3, phonenum);
-            statement.setString(4, address);
-            statement.setString(5, password);
+            statement.setString(3, password);
+            
+            statement.setString(4, phonenum);
            
 
             System.out.println("guest  name : " + name);
