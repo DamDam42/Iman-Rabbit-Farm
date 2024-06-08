@@ -18,35 +18,7 @@
             <button class="btnlogin-popup">Login</button>
         </nav>
     </header>
-
-    <div class="wrapper">
-        <div class="form-box login">
-            <h2>Login</h2>
-            <form action="#">
-                <div class="input-box">
-                    <span class="icon"></span>
-                    <input type="email" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"></span>
-                    <input type="password" required>
-                    <label>Password</label>
-                </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">
-                    Remember me</label>
-                    <a href="#">Forgot password?</a>
-                </div>
-                <button type="submit" class="btn">Login
-                </button>
-                <div class="login-register"></div>
-                <p>Don't have an account?<a 
-                href="#" class="register-link">Register</a></p>
-            </form>
-        </div>
-    
-        <div class="form-box register">
+<div class="form-box register">
             <h2>Registration</h2>
             <form th:action="@{/customerRegister}" modelAttribute="customerRegister" method ="post" th:object="${customerRegister}">
                 <div class="input-box">
@@ -86,6 +58,35 @@
                 href="#" class="login-link">Login</a></p>
             </form>
         </div>
+        
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">
+                    Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Login
+                </button>
+                <div class="login-register"></div>
+                <p>Don't have an account?<a 
+                href="#" class="register-link">Register</a></p>
+            </form>
+        </div>
+    
+        
     </div>
 <script src="test.js"></script>
 </body>
