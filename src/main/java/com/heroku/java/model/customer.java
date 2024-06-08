@@ -8,7 +8,7 @@ public class customer{
     private String custphonenum;
     private String custaddress;
     private String custpassword;
-    private int custid;
+
     
     public customer(){
 
@@ -23,13 +23,6 @@ public class customer{
         this.custname = custname;
     }
 
-    public int getCustID(){
-        return this.custid;
-    }
-
-    public void setCustID(int custid){
-        this.custid = custid;
-    }
 
     public String getCustEmail(){
         return this.custemail;
