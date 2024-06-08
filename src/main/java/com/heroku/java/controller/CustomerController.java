@@ -13,6 +13,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.heroku.java.model.customer;
 
+import jakarta.servlet.http.HttpSession;
+
+import java.sql.*;
+import javax.sql.DataSource;
+import java.util.ArrayList;
+import java.util.Map;
+
+import java.util.List;
+
 
 @Controller
 public class CustomerController {
