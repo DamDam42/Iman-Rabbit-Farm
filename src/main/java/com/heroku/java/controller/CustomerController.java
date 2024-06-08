@@ -31,7 +31,7 @@ public class CustomerController {
     @PostMapping("/customerRegister")
     public String customerRegister(@ModelAttribute("customerRegister") customer customer) {
 
-        try {
+        try{
             try (Connection connection = dataSource.getConnection()) {
                 String sql = "INSERT INTO public.customer(custname,custemail,custpassword,custphonenum,custaddress) VALUES (?,?,?,?,?);";
                 final var statement = connection.prepareStatement(sql);
