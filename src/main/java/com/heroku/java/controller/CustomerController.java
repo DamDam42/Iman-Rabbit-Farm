@@ -44,10 +44,10 @@ public class CustomerController {
                 
                 
                 
-                statement.setString(2, custName);
-                statement.setString(3, custPassword); 
-                statement.setString(4, custPhonenum);
-                statement.setString(5, custAddress);
+                statement.setString(1, custName);
+                statement.setString(2, custPassword); 
+                statement.setString(3, custPhonenum);
+                statement.setString(4, custAddress);
                 statement.setString(5, custEmail);
                 
                 
