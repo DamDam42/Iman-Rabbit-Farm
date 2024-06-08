@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.heroku.java.model.customer;
 
+
 @Controller
 public class CustomerController {
     private final DataSource dataSource;
@@ -32,7 +33,7 @@ public class CustomerController {
 
         try {
             try (Connection connection = dataSource.getConnection()) {
-                String sql = "INSERT INTO public.customer(custname,custemail,custpassword,custphonenum,custaddress) VALUES (?, ?, ?, ?,?);";
+                String sql = "INSERT INTO public.customer(custname,custemail,custpassword,custphonenum,custaddress) VALUES (?,?,?,?,?);";
                 final var statement = connection.prepareStatement(sql);
                 
                 String custname = customer.getCustName();
@@ -55,6 +56,8 @@ public class CustomerController {
                 // System.out.println("type : "+protype);
                 // System.out.println("product price : RM"+proprice);
                 // System.out.println("proimg: "+proimgs.getBytes());
+
+                connection.close();
             }
 
         } catch (SQLException e) {
