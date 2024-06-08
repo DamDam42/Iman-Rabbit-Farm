@@ -25,7 +25,7 @@ public class CustomerController {
     
     @GetMapping("/customerRegister")
     public String customerRegister() {
-        return "account/customerRegister";
+        return "account/index2";
     }
 
     @PostMapping("/customerRegister")
