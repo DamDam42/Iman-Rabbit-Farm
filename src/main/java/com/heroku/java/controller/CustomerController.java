@@ -41,10 +41,9 @@ public class CustomerController {
                 String custPhonenum = customer.getCustPhoneNum();
                 String custAddress = customer.getCustAddress();
                 String custEmail = customer.getCustEmail();
-                int custid = customer.getCustID();
                 
                 
-                statement.setInt(1, custid);
+                
                 statement.setString(2, custName);
                 statement.setString(3, custPassword); 
                 statement.setString(4, custPhonenum);
