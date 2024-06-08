@@ -13,15 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.heroku.java.model.customer;
 
-import jakarta.servlet.http.HttpSession;
-
-import java.sql.*;
-import javax.sql.DataSource;
-import java.util.ArrayList;
-import java.util.Map;
-
-import java.util.List;
-
 
 @Controller
 public class CustomerController {
@@ -54,11 +45,11 @@ public class CustomerController {
                 
                 
                 
-                statement.setString(1, custname);
-                statement.setString(2, custemail);
-                statement.setString(3, custpassword);
-                statement.setString(4, custphonenum);
-                statement.setString(5, custaddress);
+                statement.setString(2, custname);
+                statement.setString(3, custemail);
+                statement.setString(4, custpassword);
+                statement.setString(5, custphonenum);
+                statement.setString(6, custaddress);
                 statement.executeUpdate();
                 
                 System.out.println("guest  name : " + custname);
