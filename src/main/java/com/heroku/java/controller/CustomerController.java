@@ -49,7 +49,7 @@ public class CustomerController {
                 statement.setString(3, custpassword);
                 statement.setString(4, custphonenum);
                 statement.setString(5, custaddress);
-                
+                statement.executeUpdate();
                 
                 System.out.println("guest  name : " + custname);
                 // System.out.println("type : "+protype);
@@ -61,6 +61,6 @@ public class CustomerController {
             System.out.println("gay e" + e);
             return "redirect:/index";
         }
-        return "redirect:/index";
+        return "redirect:/index2";
     }
 }
