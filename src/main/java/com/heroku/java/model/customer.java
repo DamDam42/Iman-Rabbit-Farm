@@ -2,16 +2,17 @@ package com.heroku.java.model;
 
 
 public class customer{
-    private int custid;
+    
     private String custname;
     private String custemail;
     private String custphonenum;
     private String custaddress;
     private String custpassword;
-
+    private int custid;
+    
     public customer(){
 
-        
+
     }
 
     public String getCustName(){

@@ -31,26 +31,7 @@ public String index2() {
 
    
 
-    @GetMapping("/database")
-    String database(Map<String, Object> model) {
-        try (Connection connection = dataSource.getConnection()) {
-            final var statement = connection.createStatement();
-            statement.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-            statement.executeUpdate("INSERT INTO ticks VALUES (now())");
-
-            final var resultSet = statement.executeQuery("SELECT tick FROM ticks");
-            final var output = new ArrayList<>();
-            while (resultSet.next()) {
-                output.add("Read from DB: " + resultSet.getTimestamp("tick"));
-            }
-
-            model.put("records", output);
-            return "database";
-
-        } catch (Throwable t) {
-            model.put("message", t.getMessage());
-            return "error";
-        }
+    
     }
 
     public static void main(String[] args) {
