@@ -16,7 +16,7 @@ public class customer{
     }
 
     public String getCustName(){
-        return this.custname;
+        return custname;
     }
 
     public void setCustName(String custname){
