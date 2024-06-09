@@ -23,9 +23,9 @@ public class CustomerController {
         this.dataSource = dataSource;
     }
     
-    @GetMapping("/index2")
+    @GetMapping("/customerRegister")
     public String customerRegister() {
-        return "account/index2";
+        return "account/customerRegister";
     }
 
     @PostMapping("/customerRegister")
