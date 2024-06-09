@@ -41,6 +41,11 @@ public class CustomerController {
                 //String custEmail = customerRegister.getCustEmail();
                 
                 String custName = "damndawg";
+                String custPassword = "damndawg" ;
+                String custPhonenum = "damndawg";
+                String custAddress = "damndawg";
+                String custEmail = "damndawg";
+                
                 
                 
                 //statement.setString(1, custName);
