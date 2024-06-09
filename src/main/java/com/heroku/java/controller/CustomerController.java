@@ -23,12 +23,12 @@ public class CustomerController {
         this.dataSource = dataSource;
     }
     
-    @GetMapping("/customerRegister")
+    @GetMapping("/index2")
     public String customerRegister() {
         return "account/index2";
     }
 
-    @PostMapping("/customerRegister")
+    @PostMapping("/index2")
     public String customerRegister(@ModelAttribute("customerRegister") customer customerRegister) {
 
         try{
