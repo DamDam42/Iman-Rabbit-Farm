@@ -42,7 +42,7 @@ public class CustomerController {
 
         try {
             Connection connection = dataSource.getConnection();
-            String sql = "INSERT INTO public.customer(custname,custpassword,custemail,custphonenum,custaddress) VALUES (?, ?, ?, ?, ?,);";
+            String sql = "INSERT INTO public.customer(custname,custpassword,custemail,custphonenum,custaddress) VALUES (?, ?, ?, ?, ?);";
             final var statement = connection.prepareStatement(sql);
             
             String custName = customer.getCustName();
