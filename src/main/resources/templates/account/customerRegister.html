@@ -20,13 +20,14 @@
     </header>
 <div class="form-box register">
             <h2>Registration</h2>
-            <form method ="post" th:action="@{/customerRegister} modelAttribute="guestRegister" th:object="${guestRegister}">
+            <form method ="post" th:action="@{/customerRegister} modelAttribute="customerRegister" th:object="${customerRegister}">
                 <div class="input-box">
                     <span class="icon"></span>
                     
                     <label>Name</label>
                 </div>
-                <div><input type="text" name="custname" required>
+                <div>
+                    <input type="text" name="custname" required>
                 </div>
                 
                 <div class="input-box">
