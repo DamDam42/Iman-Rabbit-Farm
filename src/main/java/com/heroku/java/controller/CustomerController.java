@@ -40,15 +40,15 @@ public class CustomerController {
                 String custAddress = customerRegister.getCustAddress();
                 String custEmail = customerRegister.getCustEmail();
                 
-                //AA
-                
-                //statement.setString(1, custName);
-               // statement.setString(2, custPassword); 
-                //statement.setString(3, custPhonenum);
-               // statement.setString(4, custAddress);
-               // statement.setString(5, custEmail);
                 String sql = "INSERT INTO public.customer VALUES ('"+custName+"','"+custPassword+"','"+custPhonenum+"','"+custAddress+"','"+custEmail+"');";
                 final var statement = connection.prepareStatement(sql);
+                
+                statement.setString(1, custName);
+                statement.setString(2, custPassword); 
+                statement.setString(3, custPhonenum);
+                statement.setString(4, custAddress);
+                statement.setString(5, custEmail);
+                
                 
                 
                
