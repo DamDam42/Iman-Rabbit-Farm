@@ -36,11 +36,11 @@ public class CustomerController {
                 String sql = "INSERT INTO public.customer(custname,custpassword,custphonenum,custaddress,custemail) VALUES (?,?,?,?,?);";
                 final var statement = connection.prepareStatement(sql);
                 
-                String custName = customer.getCustName();
-                String custPassword = customer.getCustPassword();
-                String custPhonenum = customer.getCustPhoneNum();
-                String custAddress = customer.getCustAddress();
-                String custEmail = customer.getCustEmail();
+                String custName = customerRegister.getCustName();
+                String custPassword = customerRegister.getCustPassword();
+                String custPhonenum = customerRegister.getCustPhoneNum();
+                String custAddress = customerRegister.getCustAddress();
+                String custEmail = customerRegister.getCustEmail();
                 
                 
                 
