@@ -28,8 +28,8 @@ public class CustomerController {
         return "account/customerRegister";
     }
 
-    @PostMapping("/customer")
-    public String customerRegister(@ModelAttribute("customer") customer customerRegister) {
+    @PostMapping("/customerRegister")
+    public String customerRegister(@ModelAttribute("customerRegister") customer customerRegister) {
 
         try{
             Connection connection = dataSource.getConnection();
