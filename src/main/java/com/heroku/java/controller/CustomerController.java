@@ -32,15 +32,14 @@ public class CustomerController {
 
     @PostMapping("/customerRegister")
     public String customerRegister(@ModelAttribute("customerRegister") customer customerRegister) {
-
-        try{
-            Connection connection = dataSource.getConnection();
-                
                 String custName = customerRegister.getCustName();
                 String custPassword = customerRegister.getCustPassword();
                 String custPhonenum = customerRegister.getCustPhoneNum();
                 String custAddress = customerRegister.getCustAddress();
                 String custEmail = customerRegister.getCustEmail();
+        try{
+            try (Connection connection = dataSource.getConnection()) {
+                
                 
                 String sql = "INSERT INTO public.customer(custname,custpassword,custphonenum,custaddress,custemail) VALUES (?,?,?,?,?);";
                 final var statement = connection.prepareStatement(sql);
@@ -60,8 +59,7 @@ public class CustomerController {
                 // System.out.println("type : "+protype);
                 // System.out.println("product price : RM"+proprice);
                 // System.out.println("proimg: "+proimgs.getBytes());
-
-                connection.close();
+            }
             
 
         } catch (SQLException e) {
