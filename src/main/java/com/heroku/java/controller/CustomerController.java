@@ -40,7 +40,7 @@ public class CustomerController {
                 String custAddress = customerRegister.getCustAddress();
                 String custEmail = customerRegister.getCustEmail();
                 
-                String sql = "INSERT INTO public.customer VALUES (?,?,?,?,?);";
+                String sql = "INSERT INTO public.customer(custname,custpassword,custphonenum,custaddress,custemail) VALUES (?,?,?,?,?);";
                 final var statement = connection.prepareStatement(sql);
                 
                 statement.setString(1, custName);
