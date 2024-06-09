@@ -1,19 +1,16 @@
 package com.heroku.java.controller;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.heroku.java.model.customer;
-
 
 @Controller
 public class CustomerController {
@@ -24,48 +21,46 @@ public class CustomerController {
         this.dataSource = dataSource;
     }
     
-    @GetMapping("customerRegister")
-    public String customerRegisterForm(Model model) {
-        model.addAttribute("customerRegister", new customer()); // Add an empty Customer object
+    @GetMapping("/customerRegister")
+    public String customerRegister() {
         return "account/customerRegister";
     }
 
-    @PostMapping("/customerRegister")
-    public String customerRegister(@ModelAttribute("customerRegister") customer customerRegister) {
-                String custName = customerRegister.getCustName();
-                String custPassword = customerRegister.getCustPassword();
-                String custPhonenum = customerRegister.getCustPhoneNum();
-                String custAddress = customerRegister.getCustAddress();
-                String custEmail = customerRegister.getCustEmail();
-        try{
-            try (Connection connection = dataSource.getConnection()) {
-                
-                
-                String sql = "INSERT INTO public.customer(custname,custpassword,custphonenum,custaddress,custemail) VALUES (?,?,?,?,?);";
-                final var statement = connection.prepareStatement(sql);
-                
-                statement.setString(1, custName);
-                statement.setString(2, custPassword); 
-                statement.setString(3, custPhonenum);
-                statement.setString(4, custAddress);
-                statement.setString(5, custEmail);
-                
-                
-                
-               
-                statement.executeUpdate();
-                
-                System.out.println("guest  name : " + custName);
-                // System.out.println("type : "+protype);
-                // System.out.println("product price : RM"+proprice);
-                // System.out.println("proimg: "+proimgs.getBytes());
-            }
-            
 
-        } catch (SQLException e) {
-            System.out.println("gay e" + e);
+    @PostMapping("/customerRegister")
+    public String customerRegister(@ModelAttribute("customerRegister") customer customer) {
+
+        try {
+            Connection connection = dataSource.getConnection();
+            String sql = "INSERT INTO public.customer(custname,custpassword,custemail,custphonenum,custaddress) VALUES (?, ?, ?, ?, ?,);";
+            final var statement = connection.prepareStatement(sql);
+            
+            String custName = customer.getCustName();
+            String custPassword = customer.getCustPassword();
+            String custEmail = customer.getCustEmail();
+            String custPhonenum = customer.getCustPhoneNum();
+            String custAddress = customer.getCustAddress();
+
+
+            statement.setString(1, custName);
+            statement.setString(2, custPassword);
+            statement.setString(3, custEmail);
+            statement.setString(4, custPhonenum);
+            statement.setString(5, custAddress);
+            
+            statement.executeUpdate();
+
+            System.out.println("name : " + custName);
+            // System.out.println("type : "+protype);
+            // System.out.println("product price : RM"+proprice);
+            // System.out.println("proimg: "+proimgs.getBytes());
+
+            connection.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
             return "redirect:/index";
         }
-        return "redirect:/index2";
-    }
+        return "redirect:/customerRegister";
+    } 
 }
