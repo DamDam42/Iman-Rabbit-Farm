@@ -24,7 +24,7 @@ public class GettingStartedApplication {
 
 // for guest
 
-@GetMapping("/customerRegister")
+@GetMapping("/index2")
 public String  customerRegister() {
     return "account/index2";
 }
