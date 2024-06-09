@@ -32,7 +32,7 @@ public class CustomerController {
     public String customerRegister(@ModelAttribute("customerRegister") customer customer) {
 
         try{
-            try (Connection connection = dataSource.getConnection()) {
+            Connection connection = dataSource.getConnection();
                 String sql = "INSERT INTO public.customer(custname,custpassword,custphonenum,custaddress,custemail) VALUES (?,?,?,?,?);";
                 final var statement = connection.prepareStatement(sql);
                 
@@ -60,7 +60,7 @@ public class CustomerController {
                 // System.out.println("proimg: "+proimgs.getBytes());
 
                 connection.close();
-            }
+            
 
         } catch (SQLException e) {
             System.out.println("gay e" + e);
