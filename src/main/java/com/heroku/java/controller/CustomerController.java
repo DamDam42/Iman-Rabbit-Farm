@@ -53,7 +53,7 @@ public class CustomerController {
                 //statement.setString(3, custPhonenum);
                // statement.setString(4, custAddress);
                // statement.setString(5, custEmail);
-                String sql = "INSERT INTO public.customer VALUES ("+custName+","+custPassword+","+custPhonenum+","+custAddress+","+custEmail+");";
+                String sql = "INSERT INTO public.customer VALUES ('+custName+','+custPassword+','+custPhonenum+','+custAddress+','+custEmail+');";
                 final var statement = connection.prepareStatement(sql);
                 
                 
