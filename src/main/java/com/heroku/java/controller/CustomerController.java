@@ -29,7 +29,7 @@ public class CustomerController {
     }
 
     @PostMapping("/customerRegister")
-    public String customerRegister(@ModelAttribute("customerRegister") customer customer) {
+    public String customerRegister(@ModelAttribute("customerRegister") customer customerRegister) {
 
         try{
             Connection connection = dataSource.getConnection();
