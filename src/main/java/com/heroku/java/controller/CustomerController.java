@@ -34,19 +34,13 @@ public class CustomerController {
         try{
             Connection connection = dataSource.getConnection();
                 
-                //String custName = customerRegister.getCustName();
-               // String custPassword = customerRegister.getCustPassword();
-                //String custPhonenum = customerRegister.getCustPhoneNum();
-                //String custAddress = customerRegister.getCustAddress();
-                //String custEmail = customerRegister.getCustEmail();
+                String custName = customerRegister.getCustName();
+                String custPassword = customerRegister.getCustPassword();
+                String custPhonenum = customerRegister.getCustPhoneNum();
+                String custAddress = customerRegister.getCustAddress();
+                String custEmail = customerRegister.getCustEmail();
                 
-                String custName = "damndawg";
-                String custPassword = "damndawg" ;
-                String custPhonenum = "damndawg";
-                String custAddress = "damndawg";
-                String custEmail = "damndawg";
-                
-                
+                //AA
                 
                 //statement.setString(1, custName);
                // statement.setString(2, custPassword); 
