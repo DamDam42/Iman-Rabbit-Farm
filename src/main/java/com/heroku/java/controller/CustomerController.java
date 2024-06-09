@@ -39,6 +39,6 @@ public class CustomerController {
             e.printStackTrace();
             return "redirect:/index";
         }
-        return "redirect:/customerRegister";
+        return "redirect:/account";
     } 
 }
