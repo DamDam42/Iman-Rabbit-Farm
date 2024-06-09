@@ -23,8 +23,9 @@ public class CustomerController {
         this.dataSource = dataSource;
     }
     
-    @GetMapping("/customer")
-    public String customerRegister() {
+    @GetMapping("customerRegister")
+    public String customerRegisterForm(Model model) {
+        model.addAttribute("customerRegister", new Customer()); // Add an empty Customer object
         return "account/customerRegister";
     }
 
