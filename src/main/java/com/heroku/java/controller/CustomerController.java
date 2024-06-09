@@ -23,7 +23,7 @@ public class CustomerController {
         this.dataSource = dataSource;
     }
     
-    @GetMapping("/customerRegister")
+    @GetMapping("/customer")
     public String customerRegister() {
         return "account/customerRegister";
     }
