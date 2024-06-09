@@ -23,7 +23,10 @@ public class GettingStartedApplication {
     }
 
 // for guest
-
+@GetMapping("/customerRegister")
+public String customerRegister() {
+    return "account/customerRegister";
+}
    
 
     @GetMapping("/database")
