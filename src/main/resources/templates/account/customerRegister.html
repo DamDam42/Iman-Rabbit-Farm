@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Customer Registration</title>
 </head>
 <body>
-    <form method ="post" th:action="@{/customerRegister}" modelAttribute="customerRegister" th:object="${customerRegister}">
-<input type = "text" name="custname" required>
-<input type = "text" name= "custpassword" required>
-<input type = "email" name="custemail" required>
-<input type = "text" name ="custphonenum" required>
-<input type="text" name="custemail" required>
-<input type ="submit" value="register">
+    <form method="post" th:action="@{/customerRegister}" th:object="${customer}">
+        <input type="text" th:field="*{custName}" placeholder="Name" required>
+        <input type="password" th:field="*{custPassword}" placeholder="Password" required>
+        <input type="email" th:field="*{custEmail}" placeholder="Email" required>
+        <input type="text" th:field="*{custPhoneNum}" placeholder="Phone Number" required>
+        <input type="text" th:field="*{custAddress}" placeholder="Address" required>
+        <button type="submit">Register</button>
     </form>
 </body>
 </html>
