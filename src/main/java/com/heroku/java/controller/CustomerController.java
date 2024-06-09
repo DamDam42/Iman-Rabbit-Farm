@@ -1,26 +1,15 @@
 package com.heroku.java.controller;
 
+import java.sql.Connection;
+
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.heroku.java.model.*;
-
-import jakarta.servlet.http.HttpSession;
-
-import java.sql.*;
-import javax.sql.DataSource;
-import java.util.ArrayList;
-import java.util.Map;
-
-import java.util.List;
+import com.heroku.java.model.customer;
 
 @Controller
 public class CustomerController {
@@ -31,10 +20,6 @@ public class CustomerController {
         this.dataSource = dataSource;
     }
     
-    @GetMapping("/customerRegister")
-    public String customerRegister() {
-        return "account/customerRegister";
-    }
 
 
     @PostMapping("/customerRegister")
@@ -42,7 +27,7 @@ public class CustomerController {
 
         try {
             Connection connection = dataSource.getConnection();
-            String sql = "INSERT INTO public.customer(custname,custpassword,custemail,custphonenum,custaddress) VALUES (?, ?, ?, ?, ?,);";
+            String sql = "INSERT INTO public.customer(custname,custpassword,custemail,custphonenum,custaddress) VALUES (?, ?, ?, ?, ?);";
             final var statement = connection.prepareStatement(sql);
             
             String custName = customer.getCustName();
