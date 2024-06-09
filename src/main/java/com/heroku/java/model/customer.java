@@ -10,10 +10,7 @@ public class customer{
     private String custpassword;
     private int custid;
     
-    public customer(){
-
-
-    }
+    public customer(){}
 
     public String getCustName(){
         return this.custname;
