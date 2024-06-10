@@ -27,7 +27,7 @@ public class CustomerController {
 
     @GetMapping("/customerRegister")
 public String customerRegister(@ModelAttribute("Customer") Model model) {
-    model.addAttribute("Customer",Customer);
+    model.addAttribute("Customer", new Customer());
     return "account/customerRegister";
 }
 
