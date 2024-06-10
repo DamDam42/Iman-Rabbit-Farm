@@ -31,7 +31,7 @@ public String customerRegister(Model model) {
 }
 
     @PostMapping("/customerRegister")
-    public String customerRegister(@ModelAttribute("CustomerRegister") Customer customer) {
+    public String customerRegister(@ModelAttribute("Customer") Customer customer) {
         try (Connection connection = dataSource.getConnection()){
 
             System.out.println("Received customer details:");
