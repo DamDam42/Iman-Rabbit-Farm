@@ -23,8 +23,15 @@ public class CustomerController {
     }
 
     @PostMapping("/customerRegister")
-    public String customerRegister(@ModelAttribute("customerRegister") Customer customer) {
+    public String customerRegister(@ModelAttribute("customer") Customer customer) {
         try (Connection connection = dataSource.getConnection()){
+
+            System.out.println("Received customer details:");
+        System.out.println("Name: " + customer.getCustName());
+        System.out.println("Password: " + customer.getCustPassword());
+        System.out.println("Email: " + customer.getCustEmail());
+        System.out.println("Phone Number: " + customer.getCustPhoneNum());
+        System.out.println("Address: " + customer.getCustAddress());
             String sql = "INSERT INTO public.customer(custname, custpassword, custemail, custphonenum, custaddress,custid) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, customer.getCustName());
