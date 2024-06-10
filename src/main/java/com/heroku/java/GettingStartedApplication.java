@@ -23,7 +23,10 @@ public class GettingStartedApplication {
     }
 
 // for guest
-
+@GetMapping ("/viewticket")
+public String viewticket(){
+    return "account/createBooking";
+}
    
 
     @GetMapping("/database")
