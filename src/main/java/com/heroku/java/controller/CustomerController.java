@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,7 @@ import com.heroku.java.model.Customer;
 public class CustomerController {
 
     private final DataSource dataSource;
+    private String Customer;
 
     @Autowired
     public CustomerController(DataSource dataSource) {
@@ -29,7 +31,8 @@ public String customerRegister() {
 }
 
     @PostMapping("/customerAction")
-    public String customerRegister(@ModelAttribute("Customer") Customer customer) {
+    public String customerRegister(@ModelAttribute("Customer") Customer customer,Model model) {
+        model.addAttribute(Customer,customer);
         try (Connection connection = dataSource.getConnection()){
 
             System.out.println("Received customer details:");
