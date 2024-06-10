@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import com.heroku.java.model.Customer;
 
 @SpringBootApplication
 @Controller
@@ -26,11 +23,7 @@ public class GettingStartedApplication {
     }
 
 // for guest
-@GetMapping("/customerRegister")
-public String customerRegister(Model model) {
-     model.addAttribute("customerRegister", new Customer());
-    return "account/customerRegister";
-}
+
    
 
     @GetMapping("/database")
