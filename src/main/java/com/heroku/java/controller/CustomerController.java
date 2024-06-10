@@ -26,12 +26,12 @@ public class CustomerController {
 
     @GetMapping("/customerRegister")
 public String customerRegister(Model model) {
-     model.addAttribute("Customer", new Customer());
+     model.addAttribute("customerRegister", new Customer());
     return "account/customerRegister";
 }
 
     @PostMapping("/customerRegister")
-    public String customerRegister(@ModelAttribute("Customer") Customer customer) {
+    public String customerRegister(@ModelAttribute("customerRegister") Customer customer) {
         try (Connection connection = dataSource.getConnection()){
 
             System.out.println("Received customer details:");
