@@ -1,7 +1,7 @@
 package com.heroku.java.model;
 
 
-public class Customr{
+public class Customer{
     
     private String custname;
     private String custemail;
