@@ -22,7 +22,7 @@ public class TicketController {
 
     @GetMapping ("/viewticket")
     public String viewticket(){
-        return "account/viewticket";
+        return "/createBooking";
     }
 
    @PostMapping("/addTicket")

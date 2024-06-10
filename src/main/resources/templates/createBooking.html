@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="createBooking.css"
+    
     
 </head>
 
@@ -24,51 +24,29 @@
     
 
 
-<h2 class="y">BOOK YOUR TICKETS WITH US</h2>
+<h2 class="y">TICKET MANAGEMENT</h2>
     <div class="container">
-        <div class="title">BOOK YOUR TICKETS</div>
-        <form>
+        <div class="title">MANAGE TICKET</div>
+     <form th:action="@{/addTicket}"
+        modelAttribute="addTicket"
+        th:object="(${ticket})"
+        enctype="multipart/form-data">
+
             <div class = "user-details">
 
             <div class = "input-box" >
-            <label for = "name" class="details">Name :</label>
-            <input type="text" name="Name" placeholder="Your Name">
+            <label for = "name" class="details">Ticket Type</label>
+            <input type="text" name="tickettype" placeholder="Ticket Type">
             </div>
 
             <div class = "input-box">
             <label for = "email" class="details">Email :</label>
-            <input type = "email" name="email" placeholder="Email">
+            <input type = "number" name="ticketprice" placeholder="Ticket Price>
             </div>         
 
-            <div class = "input-box">
-                <label for = "phoneNo" class="details">Phone Number : </label>
-                <input type ="number" name="phoneNo" placeholder="Phone Number">
-            </div>
+            
 
-            <div class = "input-box">
-                <label for = "numAdult" class="details">Adult</label>
-                <input type = "number" name = "numAdult" placeholder="No. of Adults">
-            </div>
 
-            <div class = "input-box">
-                <label for = "numChildren" class="details">Children</label>
-                <input type = "number" name = "numChildren" placeholder="No. of Childrens">
-            </div>
-
-            <div class = "input-box">
-                <label for = "numSenior" class="details">Senior</label>
-                <input type = "number" name = "numSenior" placeholder="No. of Seniors">
-            </div>
-
-            <div class = "input-box">
-                <label for = "ticketDate" class="details">Date :</label>
-                <input type = "date" name = "ticketDate" >
-            </div>
-
-            <div class = "button">
-                <input type = "submit" value = "Check Availability"
-            </div>
-</div>
 
 
 
