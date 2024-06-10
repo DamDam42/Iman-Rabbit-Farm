@@ -7,7 +7,7 @@
 </head>
 <body>
     <form method="post" th:action="@{/customerRegister}" ModeLAtribute="customerRegister" th:object="${customerRegister}">
-        <input type="text" th:field ="*{custid}" placeholder="ID" required>
+        <input type="text" th:field="*{custid}" placeholder="ID" required>
         <input type="text" th:field="*{custname}" placeholder="Name" required>
         <input type="password" th:field="*{custpassword}" placeholder="Password" required>
         <input type="email" th:field="*{custemail}" placeholder="Email" required>
