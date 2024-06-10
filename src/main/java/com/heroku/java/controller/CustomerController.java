@@ -18,7 +18,7 @@ import com.heroku.java.model.Customer;
 public class CustomerController {
 
     private final DataSource dataSource;
-    private String Customer;
+    
 
     @Autowired
     public CustomerController(DataSource dataSource) {
@@ -26,14 +26,14 @@ public class CustomerController {
     }
 
     @GetMapping("/customerRegister")
-public String customerRegister(@ModelAttribute("Customer") Model model) {
-    model.addAttribute("Customer", new Customer());
+public String customerRegister() {
+    
     return "account/customerRegister";
 }
 
     @PostMapping("/customerAction")
     public String customerRegister(@ModelAttribute("Customer") Customer customer,Model model) {
-        model.addAttribute("Customer",Customer);
+        
         try (Connection connection = dataSource.getConnection()){
 
             System.out.println("Received customer details:");
