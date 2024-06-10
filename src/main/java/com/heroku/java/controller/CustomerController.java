@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.heroku.java.model.customer;
+import com.heroku.java.model.Customer;
 
 @Controller
 public class CustomerController {
@@ -23,7 +23,7 @@ public class CustomerController {
     }
 
     @PostMapping("/customerRegister")
-    public String customerRegister(@ModelAttribute("customer") customer customer) {
+    public String customerRegister(@ModelAttribute("customer") Customer customer) {
         try (Connection connection = dataSource.getConnection()){
             String sql = "INSERT INTO public.customer(custname, custpassword, custemail, custphonenum, custaddress) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);

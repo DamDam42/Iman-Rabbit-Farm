@@ -1,7 +1,7 @@
 package com.heroku.java.model;
 
 
-public class customer{
+public class Customer{
     
     private String custname;
     private String custemail;
@@ -10,7 +10,7 @@ public class customer{
     private String custpassword;
     private int custid;
     
-    public customer(){}
+    public Customer(){}
 
     public String getCustName(){
         return this.custname;
