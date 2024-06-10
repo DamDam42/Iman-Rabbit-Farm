@@ -30,6 +30,7 @@
      <form th:action="@{/addTicket}"
         modelAttribute="addTicket"
         th:object="(${ticket})"
+        method="post"
         enctype="multipart/form-data">
 
             <div class = "user-details">
