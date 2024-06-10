@@ -25,13 +25,14 @@ public class CustomerController {
     @PostMapping("/customerRegister")
     public String customerRegister(@ModelAttribute("customerRegister") Customer customer) {
         try (Connection connection = dataSource.getConnection()){
-            String sql = "INSERT INTO public.customer(custname, custpassword, custemail, custphonenum, custaddress) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO public.customer(custname, custpassword, custemail, custphonenum, custaddress,custid) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, customer.getCustName());
             statement.setString(2, customer.getCustPassword());
             statement.setString(3, customer.getCustEmail());
             statement.setString(4, customer.getCustPhoneNum());
             statement.setString(5, customer.getCustAddress());
+            statement.setString(6,customer.getCustID());
             statement.executeUpdate();
             System.out.println("Name: " + customer.getCustName());
             connection.close();
