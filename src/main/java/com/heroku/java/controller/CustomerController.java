@@ -28,7 +28,7 @@ public String customerRegister() {
     return "account/customerRegister";
 }
 
-    @PostMapping("/customerRegister")
+    @PostMapping("/customerAction")
     public String customerRegister(@ModelAttribute("customerRegister") Customer customer) {
         try (Connection connection = dataSource.getConnection()){
 
