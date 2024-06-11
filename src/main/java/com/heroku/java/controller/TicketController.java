@@ -26,20 +26,19 @@ public class TicketController {
        
 
         try {
-            Connection connection = dataSource.getConnection();
-            String sql = "INSERT INTO public.ticket(tickettype,ticketprice) VALUES(?,?)";
-            final var statement = connection.prepareStatement(sql);
-
-            String tickettype= ticket.getTicketType();
-            double ticketprice = ticket.getTicketPrice();
-            
-            
-            statement.setString(1, tickettype);
-            statement.setDouble(2, ticketprice);
-           
-            statement.executeUpdate();
-            
-            connection.close();
+            try (Connection connection = dataSource.getConnection()) {
+                String sql = "INSERT INTO public.ticket(tickettype,ticketprice) VALUES(?,?)";
+                final var statement = connection.prepareStatement(sql);
+                
+                String tickettype= ticket.getTicketType();
+                double ticketprice = ticket.getTicketPrice();
+                
+                
+                statement.setString(1, tickettype);
+                statement.setDouble(2, ticketprice);
+                
+                statement.executeUpdate();
+            }
                 
                 } catch (Exception e) {
                     e.printStackTrace();
