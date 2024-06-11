@@ -38,6 +38,7 @@ public class TicketController {
                 statement.setDouble(2, ticketprice);
                 
                 statement.executeUpdate();
+                connection.close();
             }
                 
                 } catch (Exception e) {
